@@ -35,8 +35,8 @@ RUN curl -s http://www-eu.apache.org/dist/phoenix/phoenix-4.7.0-HBase-1.1/bin/ph
 RUN cd /usr/local && ln -s ./phoenix-4.7.0-HBase-1.1-bin phoenix
 ENV PHOENIX_HOME /usr/local/phoenix
 ENV PATH $PATH:$PHOENIX_HOME/bin
-RUN cp $PHOENIX_HOME/phoenix-core-$PHOENIX_VERSION-HBase-$HBASE_MAJOR.jar /usr/local/hbase/lib/phoenix.jar
-RUN cp $PHOENIX_HOME/phoenix-server-$PHOENIX_VERSION-HBase-$HBASE_MAJOR.jar /usr/local/hbase/lib/phoenix-server.jar
+RUN cp $PHOENIX_HOME/phoenix-core-4.7.0-HBase-1.1.jar /usr/local/hbase/lib/phoenix.jar
+RUN cp $PHOENIX_HOME/phoenix-server-4.7.0-HBase-1.1.jar /usr/local/hbase/lib/phoenix-server.jar
 
 # bootstrap-phoenix
 ADD bootstrap-phoenix.sh /etc/bootstrap-phoenix.sh
