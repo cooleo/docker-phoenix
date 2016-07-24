@@ -1,20 +1,17 @@
 FROM sequenceiq/hadoop-docker:2.7.0
 MAINTAINER SequenceIQ
 
-#java
+# Install Java.
 RUN \
-  echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true && \
-  add-apt-repository -y ppa:webupd8team/java && \
   apt-get update && \
-  apt-get install -y oracle-java8-installer && \
-  rm -rf /var/lib/apt/lists/* && \
-  rm -rf /var/cache/oracle-jdk8-installer
-  
+  apt-get install -y openjdk-7-jre && \
+  rm -rf /var/lib/apt/lists/*
+
 # Define working directory.
 WORKDIR /data
 
 # Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
 # zookeeper
 ENV ZOOKEEPER_VERSION 3.4.6
