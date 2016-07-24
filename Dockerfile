@@ -28,7 +28,7 @@ ENV PATH $PATH:$HBASE_HOME/bin
 ADD hbase-site.xml $HBASE_HOME/conf/hbase-site.xml
 
 # phoenix
-ENV PHOENIX_VERSION 4.7.0
+ENV PHOENIX_VERSION 4.6.0
 RUN curl -s http://apache.mirror.vexxhost.com/phoenix/phoenix-$PHOENIX_VERSION-HBase-$HBASE_MAJOR/bin/phoenix-$PHOENIX_VERSION-HBase-$HBASE_MAJOR-bin.tar.gz | tar -xz -C /usr/local/
 RUN cd /usr/local && ln -s ./phoenix-$PHOENIX_VERSION-HBase-$HBASE_MAJOR-bin phoenix
 ENV PHOENIX_HOME /usr/local/phoenix
