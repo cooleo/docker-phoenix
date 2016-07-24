@@ -14,9 +14,9 @@ RUN mv $ZOO_HOME/conf/zoo_sample.cfg $ZOO_HOME/conf/zoo.cfg
 RUN mkdir /tmp/zookeeper
 
 # hbase
-ENV HBASE_MAJOR 1.2.2
-ENV HBASE_MINOR 2
-ENV HBASE_VERSION "${HBASE_MAJOR}.${HBASE_MINOR}"
+ENV HBASE_MAJOR 1.2
+
+ENV HBASE_VERSION "1.2.2"
 #RUN curl -s http://apache.mirror.gtcomm.net/hbase/$HBASE_VERSION/hbase-$HBASE_VERSION-bin.tar.gz | tar -xz -C /usr/local/
 #RUN curl -s http://apache.mirror.gtcomm.net/hbase/1.2.2/hbase-1.2.2-bin.tar.gz | tar -xz -C /usr/local/
 RUN curl -s http://apache.mirror.gtcomm.net/hbase/1.2.2/hbase-1.2.2-bin.tar.gz | tar -xz -C /usr/local
