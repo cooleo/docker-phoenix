@@ -1,6 +1,9 @@
 FROM sequenceiq/hadoop-docker:2.7.0
 MAINTAINER SequenceIQ
 
+#java
+ENV JAVA_HOME /usr/lib/jvm/jre
+
 # zookeeper
 ENV ZOOKEEPER_VERSION 3.4.6
 RUN curl -s http://mirror.csclub.uwaterloo.ca/apache/zookeeper/zookeeper-$ZOOKEEPER_VERSION/zookeeper-$ZOOKEEPER_VERSION.tar.gz | tar -xz -C /usr/local/
