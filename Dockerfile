@@ -4,7 +4,14 @@ MAINTAINER SequenceIQ
 
 
 # Define commonly used JAVA_HOME variable
+# java
+RUN curl -LO 'http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-linux-x64.rpm' -H 'Cookie: oraclelicense=accept-securebackup-cookie'
+RUN rpm -i jdk-7u71-linux-x64.rpm
+RUN rm jdk-7u71-linux-x64.rpm
+
 ENV JAVA_HOME /usr/java/default
+ENV PATH $PATH:$JAVA_HOME/bin
+RUN rm /usr/bin/java && ln -s $JAVA_HOME/bin/java /usr/bin/java
 
 # zookeeper
 ENV ZOOKEEPER_VERSION 3.4.6
