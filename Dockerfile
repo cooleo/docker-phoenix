@@ -24,7 +24,7 @@ RUN curl -s http://apache.mirror.gtcomm.net/hbase/1.2.2/hbase-1.2.2-bin.tar.gz |
 RUN cd /usr/local && ln -s ./hbase-$HBASE_VERSION hbase
 ENV HBASE_HOME /usr/local/hbase
 ENV PATH $PATH:$HBASE_HOME/bin
-RUN rm $HBASE_HOME/conf/hbase-site.xml
+RUN rm /usr/local/hbase/conf/hbase-site.xml
 ADD hbase-site.xml $HBASE_HOME/conf/hbase-site.xml
 
 # phoenix
